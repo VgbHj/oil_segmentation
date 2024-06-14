@@ -1,7 +1,6 @@
-
 import os
 
-from loguru import logger
+# from loguru import logger
 
 from typing import List
 from fastapi import FastAPI, File, UploadFile, Request
@@ -50,7 +49,7 @@ async def main(request: Request):
 @app.post("/uploadfile")
 async def upload_file(request: Request, files:List[UploadFile] = File(...)):
     recognition_handler.handle(files[0])
-    logger.info('Showing segmentation results')
+    # logger.info('Showing segmentation results')
     j_input_filepath = os.path.join('/src/static', 'input.png')
     j_output_filepath = os.path.join('/src/static', 'output.png')
     context = {

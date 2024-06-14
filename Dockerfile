@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 COPY poetry.lock pyproject.toml /usr/src/app/
 
 # poetry build dependencies
-RUN pip install pip poetry setuptools wheel
+RUN pip install pip poetry setuptools wheel torch
 RUN poetry config virtualenvs.create false
 
 # opencv libGL.so.1 dependencies
